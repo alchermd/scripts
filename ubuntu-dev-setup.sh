@@ -30,9 +30,11 @@ else
 fi
 
 # MySQL
+# Some hacky way to bypass the password issues of MySQL 5.7
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password default'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password default'
 sudo apt-get -y install mysql-server
+mysqladmin -u root -p'default' password ''
 
 # Laravel
 composer global require "laravel/installer"
