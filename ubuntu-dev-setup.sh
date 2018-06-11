@@ -3,9 +3,11 @@
 # Let's start by updating our repositories
 sudo apt update && apt upgrade
 
+
 #######################################
 # --- Programming and Development --- #
 #######################################
+
 
 # Git
 sudo apt install git -y
@@ -39,9 +41,22 @@ mysqladmin -u root -p'default' password ''
 # Laravel
 composer global require "laravel/installer"
 
+# Python3.6
+yes " " | sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.6 -y
+
+# pip
+sudo apt-get install python-pip -y
+
+# virtualenvwrapper
+pip install --user virtualenvwrapper
+
+
 ##################### 
 # --- Utilities --- #
 #####################
+
 
 # zsh
 sudo apt install zsh -y
